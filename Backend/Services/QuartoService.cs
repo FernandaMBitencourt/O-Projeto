@@ -1,13 +1,20 @@
-using System;
+using Backend.DataAccess; // Importa o namespace onde está definido o QuartoRepository
+using Backend.Models;
 
-public class QuartoRepository
+namespace Backend.Services // Adiciona um namespace para suas classes de serviço
 {
-    // Construtor vazio (default)
-    public QuartoRepository() { }
-
-    // Método para criar um quarto
-    public Quarto CriarQuarto(string numero, string tipo, decimal precoDiaria, bool disponivel)
+    public class QuartoService
     {
-        return new Quarto(numero, tipo, precoDiaria, disponivel);
+        private readonly QuartoRepository _quartoRepository;
+
+        public QuartoService(QuartoRepository quartoRepository)
+        {
+            _quartoRepository = quartoRepository;
+        }
+
+        public void CriarQuarto(Quarto quarto)
+        {
+            _quartoRepository.AdicionarQuarto(quarto);
+        }
     }
 }
