@@ -1,10 +1,19 @@
+using System;
+using System.ComponentModel.DataAnnotations;
 
-
-public class Quarto
+namespace Backend.Models
 {
-    public int Id { get; set; }
-    public string Numero { get; set; }
-    public string Tipo { get; set; }
-    public decimal PrecoDiaria { get; set; }
-    public bool Disponivel { get; set; }
+    public class Quarto
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public int? Numero { get; set; }
+
+        public string? Tipo { get; set; }
+
+        public decimal Diaria { get; set; }
+
+        public bool Disponivel { get; set; }
+    }
 }
