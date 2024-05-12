@@ -14,7 +14,12 @@ namespace Backend.Services // Adiciona um namespace para suas classes de serviç
 
         public void CriarQuarto(Quarto quarto)
         {
-            _quartoRepository.AdicionarQuarto(quarto);
+            _quartoRepository.CriarQuarto(quarto);
+        }
+
+        public Quarto ObterQuartoPorNumero(string numero)
+        {
+            return _quartoRepository.ObterQuartoPorNumero(numero);
         }
     }
 }

@@ -8,11 +8,11 @@ namespace Backend.Models
         public int Id { get; set; }
 
         [Required]
-        public string? Numero { get; set; }
+        public int? Numero { get; set; }
 
         public string? Tipo { get; set; }
 
-        public decimal PrecoDiaria { get; set; }
+        public decimal Diaria { get; set; }
 
         public bool Disponivel { get; set; }
     }
